@@ -12,17 +12,17 @@
                             {{ product.name }}
                         </div>
                         <div class="item-price">
-                            Price: {{ product.productPrice | currency }}
+                            Prix: {{ product.productPrice | currency }}
                         </div>
                         <div class="item-quantity">
-                            Quantity: {{ product.quantity }}
+                            Quantité: {{ product.quantity }}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="action-buttons">
-                <button mat-raised-button color="primary" routerLink="/customer/review/{{product.id}}">Give
-                    Review</button>
+                <button mat-raised-button color="primary" routerLink="/customer/review/{{product.id}}">Donnez votre avis
+                    </button>
             </div>
         </div>
         <div class="total-price">

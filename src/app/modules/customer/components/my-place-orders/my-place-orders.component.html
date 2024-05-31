@@ -3,13 +3,13 @@
     <mat-table #basicTable [dataSource]="MyOrders" class="mat-elevation-z8" >
 
         <ng-container matColumnDef="trackingId">
-            <mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Tracking
+            <mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Suivre Commande
                 ID</mat-header-cell>
             <mat-cell *matCellDef="let myOrder">{{ myOrder.trackingId }}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="amount">
-            <mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Amount</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Montant</mat-header-cell>
             <mat-cell *matCellDef="let myOrder" style="font-weight: 600;">{{ myOrder.amount }}</mat-cell>
         </ng-container>
 
@@ -21,9 +21,9 @@
 
 
 
-        <ng-container matColumnDef="address">
-            <mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Address</mat-header-cell>
-            <mat-cell *matCellDef="let myOrder">{{ myOrder.address }}</mat-cell>
+        <ng-container matColumnDef="Adresse">
+            <mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Adresse</mat-header-cell>
+            <mat-cell *matCellDef="let myOrder">{{ myOrder.Adresse }}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="date">
@@ -32,7 +32,7 @@
         </ng-container>
 
         <ng-container matColumnDef="status">
-            <mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Status</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Statut</mat-header-cell>
             <mat-cell *matCellDef="let myOrder">{{ myOrder.status }}</mat-cell>
         </ng-container>
 
@@ -41,14 +41,14 @@
             <mat-cell *matCellDef="let myOrder">
                 <span *ngIf="myOrder.status == 'Delivered'">
                     <button mat-raised-button color="primary" type="submit"
-                        routerLink="/customer/ordered_products/{{myOrder.id}}">Review</button>
+                        routerLink="/customer/ordered_products/{{myOrder.id}}">Revue</button>
                 </span>
             </mat-cell>
         </ng-container>
 
         <mat-header-row
-            *matHeaderRowDef="['trackingId', 'amount', 'description',  'address', 'date','status','action']"></mat-header-row>
+            *matHeaderRowDef="['trackingId', 'amount', 'description',  'Adresse', 'date','status','action']"></mat-header-row>
         <mat-row
-            *matRowDef="let myOrder; columns: ['trackingId', 'amount', 'description',  'address', 'date','status','action']"></mat-row>
+            *matRowDef="let myOrder; columns: ['trackingId', 'amount', 'description',  'Adresse', 'date','status','action']"></mat-row>
     </mat-table>
 </ng-container>

@@ -2,12 +2,12 @@
 
     <form [formGroup]="searchProductForm" class="search-form" (submit)="submitForm()">
         <mat-form-field appearance="outline" class="search-input">
-            <mat-label>Enter Keyword to search</mat-label>
+            <mat-label>Cherchez un Evenement</mat-label>
             <input matInput formControlName="title">
             <button mat-button matSuffix color="primary" [disabled]="searchProductForm.invalid">
                 <mat-icon>search</mat-icon>
             </button>
-            <mat-error *ngIf="searchProductForm.get('title').invalid">Keyword is required</mat-error>
+            <mat-error *ngIf="searchProductForm.get('title').invalid">Champ obligatoire</mat-error>
         </mat-form-field>
     </form>
 
@@ -25,11 +25,11 @@
 
                 <div class="product-info">
                     <div class="info-row">
-                        <span class="info-label">Price:</span>
+                        <span class="info-label">Prix:</span>
                         <span class="info-value">€{{ product.price }}</span>
                     </div>
                     <div class="info-row">
-                        <span class="info-label">Category:</span>
+                        <span class="info-label">Categorie:</span>
                         <span class="info-value">{{ product.categoryName }}</span>
                     </div>
                 </div>
@@ -38,11 +38,11 @@
 
                 <div class="product-info">
                     <div class="info-row">
-                        <span class="info-label">Duo Price:</span>
+                        <span class="info-label">Prix Duo:</span>
                         <span class="info-value">€{{ product.duoPrice }}</span>
                     </div>
                     <div class="info-row">
-                        <span class="info-label">Family Price:</span>
+                        <span class="info-label">Prix Famille:</span>
                         <span class="info-value">€{{ product.familyPrice }}</span>
                     </div>
                 </div>
@@ -51,13 +51,13 @@
 
                 <div class="actions">
                     <button mat-raised-button color="primary" class="update-button" (click)="addToCart(product.id, 'price')">
-                        To cart (€{{ product.price }})
+                       Ajouter (€{{ product.price }})
                     </button>
                     <button mat-raised-button color="primary" class="update-button" (click)="addToCart(product.id, 'duoPrice')">
-                        To cart (€{{ product.duoPrice }})
+                        Ajouter (€{{ product.duoPrice }})
                     </button>
                     <button mat-raised-button color="primary" class="update-button" (click)="addToCart(product.id, 'familyPrice')">
-                        To cart (€{{ product.familyPrice }})
+                        Ajouter (€{{ product.familyPrice }})
                     </button>
                 </div>
             </div>
@@ -67,7 +67,7 @@
 
 <ng-template #emptyCart>
     <div class="empty-cart">
-        <mat-icon class="icon">remove_shopping_cart</mat-icon>
-        <span>Nothing to see here.</span>
+        <mat-icon class="icon">Supprimer ma selection</mat-icon>
+        <span>Veuillez se loger pour voir tous les Evenements.</span>
     </div>
 </ng-template>

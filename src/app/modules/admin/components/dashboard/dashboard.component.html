@@ -2,10 +2,10 @@
 
     <form [formGroup]="searchProductForm" class="search-form" (submit)="submitForm()">
         <mat-form-field appearance="outline" class="search-input">
-            <mat-label>Enter Keyword to search</mat-label>
+            <mat-label>Entrez mots clés</mat-label>
             <input matInput formControlName="title">
             <button mat-button matSuffix color="primary" [disabled]="searchProductForm.invalid">
-                <mat-icon>search</mat-icon>
+                <mat-icon>Rechercher</mat-icon>
             </button>
             <mat-error *ngIf="searchProductForm.get('title').invalid">Keyword is required</mat-error>
         </mat-form-field>
@@ -25,11 +25,11 @@
 
                 <div class="product-info">
                     <div class="info-row">
-                        <span class="info-label">Price:</span>
-                        <span class="info-value">${{ product.price }}</span>
+                        <span class="info-label">Prix:</span>
+                        <span class="info-value">€{{ product.price }}</span>
                     </div>
                     <div class="info-row">
-                        <span class="info-label">Category:</span>
+                        <span class="info-label">Catégorie:</span>
                         <span class="info-value">{{ product.categoryName }}</span>
                     </div>
                 </div>
@@ -38,11 +38,11 @@
 
                 <div class="product-info">
                     <div class="info-row">
-                        <span class="info-label">Duo Price:</span>
+                        <span class="info-label">Prix Duo:</span>
                         <span class="info-value">€{{ product.duoPrice }}</span>
                     </div>
                     <div class="info-row">
-                        <span class="info-label">Family Price:</span>
+                        <span class="info-label">Prix Famille</span>
                         <span class="info-value">€{{ product.familyPrice }}</span>
                     </div>
                 </div>
@@ -53,9 +53,9 @@
                     <button mat-raised-button color="primary" class="update-button"
                         [routerLink]="'/admin/faq/' + product.id">FAQ</button>
                     <button mat-raised-button color="accent" class="update-button"
-                        [routerLink]="'/admin/product/' + product.id">Update</button>
+                        [routerLink]="'/admin/product/' + product.id">Modifier</button>
                     <button mat-raised-button color="warn" class="delete-button" (click)="deleteProduct(product.id)">
-                        Delete
+                        Supprimer
                     </button>
                 </div>
             </div>

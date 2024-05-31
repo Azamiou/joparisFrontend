@@ -1,14 +1,14 @@
 <div class="container">
     <mat-card>
-        <mat-card-title>Place Order</mat-card-title>
+        <mat-card-title>Placer Commande</mat-card-title>
         <mat-card-content>
             <form [formGroup]="orderForm">
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Address</mat-label>
-                    <input matInput formControlName="address" placeholder="Address" required>
-                    <mat-error *ngIf="orderForm.get('address').invalid && orderForm.get('address').touched">
-                        This Input Is Required!
+                    <mat-label>Adresse</mat-label>
+                    <input matInput formControlName="Adresse" placeholder="Adresse" required>
+                    <mat-error *ngIf="orderForm.get('Adresse').invalid && orderForm.get('Adresse').touched">
+                        Le champ est obligatoire!
                     </mat-error>
                 </mat-form-field>
 
@@ -21,7 +21,7 @@
 
                 <div class="button-row">
                     <button mat-raised-button color="primary" type="submit" [disabled]="orderForm.invalid"
-                        (click)="placeOrder()" class="order-button">Order</button>
+                        (click)="placeOrder()" class="order-button">Commande</button>
                     <button mat-stroked-button color="warn" class="close-button" (click)="closeForm()" class="close-button">
                         Close
                     </button>
